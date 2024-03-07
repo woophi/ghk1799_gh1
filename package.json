@@ -1,11 +1,11 @@
 {
-  "name": "invest_test_9",
+  "name": "ghk1799_test",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --base=/invest_test_9/",
+    "build": "tsc && vite build --base=/ghk1799_test/",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
