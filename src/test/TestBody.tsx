@@ -4,6 +4,7 @@ import { Radio } from '@alfalab/core-components/radio';
 import { Typography } from '@alfalab/core-components/typography';
 import { useCallback, useState } from 'react';
 import { sendDataToYM } from '../utils/events';
+import { TestResult } from './TestResult';
 import { data, resultsData } from './constants';
 import { testStyles } from './style.css';
 
@@ -35,32 +36,7 @@ export const TestBody = () => {
 
   if (showResults) {
     const result = resultsData.find(r => r.results.includes(resultsCount))!;
-    return (
-      <div className={testStyles.container}>
-        <div className={testStyles.resultsWrap}>
-          <div className={testStyles.iconBg}>
-            <img src={result.img} width={40} height={40} />
-          </div>
-
-          <Typography.TitleResponsive tag="h3" view="medium" font="system" weight="bold">
-            {resultsCount} из 5. {result.title}
-          </Typography.TitleResponsive>
-
-          <Typography.Text tag="p" view="primary-medium" className={testStyles.resultsText} defaultMargins={false}>
-            {result.text}
-          </Typography.Text>
-        </div>
-
-        <Gap size={32} />
-        <ButtonMobile block={true} view="primary" href="alfabank://investments/open_brokerage_account">
-          Открыть брокерский счет
-        </ButtonMobile>
-        <Gap size={16} />
-        <ButtonMobile block={true} view="secondary" href="alfabank://investments/catalogue?tab=BOND">
-          Купить облигации
-        </ButtonMobile>
-      </div>
-    );
+    return <TestResult result={result} resultsCount={resultsCount} />;
   }
 
   return (
