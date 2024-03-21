@@ -3,6 +3,7 @@ import { Gap } from '@alfalab/core-components/gap';
 import { Radio } from '@alfalab/core-components/radio';
 import { Typography } from '@alfalab/core-components/typography';
 import { useCallback, useState } from 'react';
+import { sendDataToYM } from '../utils/events';
 import { data, resultsData } from './constants';
 import { testStyles } from './style.css';
 
@@ -16,6 +17,7 @@ export const TestBody = () => {
 
   const onSelectAnswer = useCallback(
     (index: number) => {
+      sendDataToYM(`ghk1799_${currentStep}_${index + 1}`);
       setResults(results => (data[currentStep].answerIndex === index ? results + 1 : results));
       setAnswerIndex(index);
     },
