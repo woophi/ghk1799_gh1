@@ -1,11 +1,11 @@
 {
-  "name": "ghk1799_test",
+  "name": "ghk1799_gh1",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --base=/ghk1799_test/",
+    "build": "tsc && vite build --base=/ghk1799_gh1/",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
