@@ -12,8 +12,16 @@ export const sendDataToYM = (target: string) => {
   window.ym(96171108, 'reachGoal', target);
 };
 
+export const getSearchParams = () => {
+  const paramsString = window.location.search.replace('?', '') ?? '';
+  const searchParams = new URLSearchParams(paramsString);
+
+  return searchParams;
+};
+
 export const sendDataToGA = async (score: string, button: string) => {
   try {
+    const variant = getSearchParams().get('utm_campaign') ?? '';
     const now = new Date();
     const date = `${now.getFullYear()}-${
       now.getMonth() + 1
@@ -24,7 +32,7 @@ export const sendDataToGA = async (score: string, button: string) => {
       {
         redirect: 'follow',
         method: 'POST',
-        body: JSON.stringify({ date, score, button, variant: 'variant_1' }),
+        body: JSON.stringify({ date, score, button, variant }),
         headers: {
           'Content-Type': 'text/plain;charset=utf-8',
         },
