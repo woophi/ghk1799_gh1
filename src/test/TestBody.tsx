@@ -44,7 +44,6 @@ export const TestBody = () => {
       <Typography.TitleResponsive tag="h1" view="large" font="system" weight="bold">
         Тестирование по облигациям
       </Typography.TitleResponsive>
-      {JSON.stringify(window.location.search)}
       <Gap size={32} />
       <Typography.Text className={testStyles.steps} tag="p" view="primary-medium" defaultMargins={false}>
         Вопрос {currentStep} из 5
